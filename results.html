@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .result {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .result img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .result .info {
+            flex: 1;
+        }
+
+        .result .info h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .result .info p {
+            margin: 0;
+        }
+
+        .no-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 10px;
+            background-color: #eee;
+        }
+
+        .no-image-text {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .search-form {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .search-form input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .search-form button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .search-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+        <script>
+        // JavaScript function to handle broken images
+        function handleBrokenImage(imgElement) {
+            imgElement.onerror = null; // Prevent infinite loop
+            imgElement.src = "{{ url_for('serve_image', filename='no_image.jpg') }}"; // Replace with your placeholder image URL
+        }
+    </script>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <div class="grid">
+        {% for price, store, title, image_url, product_url in sorted_results %}
+            <div class="result">
+                <a href="{{ product_url }}"><img src="{{ image_url }}" alt="Product Image" onerror="handleBrokenImage(this);"></a>
+                <div class="info">
+                    <h3>{{ title }}</h3>
+                    <h4>{{ store }}</h4>
+                    <p>Price: NZD${{ price }}</p>
+                    <p><a href="{{ product_url }}">View Product</a></p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <form class="search-form" action="/" method="post">
+        <input type="text" name="search_term" placeholder="Enter search term" required>
+        <button type="submit">Search Again</button>
+    </form>
+</body>
+</html>
