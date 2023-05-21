@@ -48,6 +48,7 @@ This project is a Flask-based web application that allows users to search for vi
 4. Download and install the Chrome WebDriver from the following link: [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
 
    Make sure to download the version compatible with your Chrome browser.
+   Note: The application will automatically install the Chrome WebDriver to `%userprofile%/.wdm/`.
 
 5. Run the application:
 
@@ -56,6 +57,14 @@ This project is a Flask-based web application that allows users to search for vi
    ```
 
 6. Open your web browser and access the application at [http://localhost:5000](http://localhost:5000)
+
+### Precompiled
+
+Alternatively, you can use the precompiled version of the application. The precompiled version is available as a stand-alone executable file. Follow these steps to use the precompiled version:
+
+1. Download the precompiled executable for your operating system from the [Releases](/releases) page.
+2. Run the executable file.
+3. Open your web browser and access the application at [http://localhost:5000](http://localhost:5000)
 
 ## Usage
 
@@ -74,7 +83,4 @@ Contributions to this project are welcome. Feel free to open issues and submit p
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-Feel free to customize the README file according to your specific needs. Make sure to include any additional instructions, deployment details, or acknowledgments as necessary.
-
-Let me know if there's anything else I can help you with!
+```
