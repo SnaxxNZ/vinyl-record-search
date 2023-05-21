@@ -62,7 +62,7 @@ This project is a Flask-based web application that allows users to search for vi
 
 Alternatively, you can use the precompiled version of the application. The precompiled version is available as a stand-alone executable file. Follow these steps to use the precompiled version:
 
-1. Download the precompiled executable for your operating system from the [Releases](/releases) page.
+1. Download the precompiled executable for your operating system from the [Releases](https://github.com/SnaxxNZ/vinyl-record-search/releases/new) page.
 2. Run the executable file.
 3. Open your web browser and access the application at [http://localhost:5000](http://localhost:5000)
 
