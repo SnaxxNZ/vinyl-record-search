@@ -1,6 +1,7 @@
 # Vinyl Record Search and Scraping
 
 This project is a Flask-based web application that allows users to search for vinyl records and scrapes data from multiple websites related to vinyl records. The application provides a user-friendly interface for searching and displaying the scraped data.
+This ENTIRE project was made by ChatGPT.
 
 ## Features
 
